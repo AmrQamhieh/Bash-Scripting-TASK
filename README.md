@@ -79,7 +79,7 @@ cpu_YYYY-MM-DD-HH-MM.txt
 mem_YYYY-MM-DD-HH-MM.txt
 
 disk_YYYY-MM-DD-HH-MM.txt
--------------
+-----------------------------------
 ***Cron Job:***
 ```bash
 sudo crontab -e
@@ -120,12 +120,9 @@ echo "$DISK_AVG" > "$AVG/disk_avg.txt"
 # Displaying the AVG's in the log
 echo "$(date): Avg CPU=$CPU_AVG% MEM=$MEM_AVG% DISK=$DISK_AVG%" >> "$LOG"
 ```
+before doing anything we should start by:
 
-### Within the same file (avg.sh) this section is for **Displaying Results on a Web Page via Apache Server**.
-
-### but before doing anything we should start by:
-
-### Installing and enabling Apache
+Installing and enabling Apache
 ```bash
 sudo dnf install -y httpd 
 sudo systemctl enable --now httpd # start and enable Apache
@@ -142,6 +139,8 @@ sudo systemctl status httpd
 curl -I http://127.0.0.1
 ```
 _____________________________________________________________
+
+### Within the same file (avg.sh) this section is for **Displaying Results on a Web Page via Apache Server**.
 
 ```bash
 WEB=/var/www/html/sysstats
