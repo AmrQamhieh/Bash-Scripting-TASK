@@ -35,6 +35,7 @@ Create a shell script that collects CPU, Memory, and Disk usage every hour and s
 **Answer:**
 
 ### 📜 Script: `collect.sh`
+```bash
 #!/bin/bash
 
 RAW=/opt/sysstats/raw
@@ -62,6 +63,7 @@ echo "$DISK" > "$RAW/disk_$TIME.txt"
 
 #Saving in log file
 echo "$(date): collected CPU=$CPU% MEM=$MEM% DISK=$DISK%" >> "$LOG"
+```
 
 ### Explanation
 vmstat → gets CPU idle time → calculate usage as 100 - $15
