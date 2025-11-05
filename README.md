@@ -66,13 +66,13 @@ echo "$(date): collected CPU=$CPU% MEM=$MEM% DISK=$DISK%" >> "$LOG"
 ```
 
 ### Explanation
-vmstat → gets CPU idle time → calculate usage as 100 - $15
+***vmstat*** → gets CPU idle time → calculate usage as 100 - $15
 
-free -m → shows used/total memory → converted to percent
+***free -m*** → shows used/total memory → converted to percent
 
-df -P / → prints disk usage of root /
+***df -P /*** → prints disk usage of root /
 
-Files saved as:
+***Files saved as:***
 
 cpu_YYYY-MM-DD-HH-MM.txt
 
@@ -80,7 +80,7 @@ mem_YYYY-MM-DD-HH-MM.txt
 
 disk_YYYY-MM-DD-HH-MM.txt
 -------------
-Cron Job:
+***Cron Job:***
 ```bash
 sudo crontab -e
 0 * * * * /opt/sysstats/collect.sh
